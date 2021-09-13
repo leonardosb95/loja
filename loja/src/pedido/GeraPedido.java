@@ -14,11 +14,27 @@ public class GeraPedido {
         this.quantidadeIntens = quantidadeIntens;
     }
 
-    public void executa(){
-        Orcamento orcamento = new Orcamento(this.valorOrcamento,this.quantidadeIntens);
-        Pedido pedido = new Pedido(cliente,LocalDateTime.now(),orcamento);
+    public String getCliente() {
+        return cliente;
+    }
 
-        System.out.println("Salvar pedido no banco de dados");
-        System.out.println("Enviar email com dados do novo pedido");
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public BigDecimal getValorOrcamento() {
+        return valorOrcamento;
+    }
+
+    public void setValorOrcamento(BigDecimal valorOrcamento) {
+        this.valorOrcamento = valorOrcamento;
+    }
+
+    public int getQuantidadeIntens() {
+        return quantidadeIntens;
+    }
+
+    public void setQuantidadeIntens(int quantidadeIntens) {
+        this.quantidadeIntens = quantidadeIntens;
     }
 }
