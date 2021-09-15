@@ -1,6 +1,8 @@
 package pedido;
 
 import orcamento.Orcamento;
+import pedido.acao.EnviarEmailPedido;
+import pedido.acao.SalvarPedidoNoBancoDeDados;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +14,10 @@ public class GeraPedidoHandler {
         Orcamento orcamento = new Orcamento(dados.getValorOrcamento(),dados.getQuantidadeIntens());
         Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(),orcamento);
 
-        System.out.println("Salvar pedido no banco de dados");
-        System.out.println("Enviar email com dados do novo pedido");
+        EnviarEmailPedido email = new EnviarEmailPedido();
+        SalvarPedidoNoBancoDeDados salvar= new SalvarPedidoNoBancoDeDados();
+
+        email.executar(pedido);
+        salvar.executar(pedido);
     }
 }
