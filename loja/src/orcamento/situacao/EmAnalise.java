@@ -9,10 +9,10 @@ public class EmAnalise extends SituacaoOrcamento {
     }
 
     public void aprovar(Orcamento orcamento){
-        orcamento.setSituacao(new Aprovado());
+        orcamento.setSituacao(new Aprovado().toString());
     }
 
     public void reprovar(Orcamento orcamento){
-        orcamento.setSituacao(new Reprovado());
+        orcamento.setSituacao(new Reprovado().toString());
     }
 }
